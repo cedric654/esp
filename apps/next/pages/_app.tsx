@@ -11,7 +11,7 @@ const fixReanimatedIssue = () => {
 
 fixReanimatedIssue()
 
-import { Provider } from 'app/provider'
+import { AppProviders } from 'app/providers/app-providers'
 import Head from 'next/head'
 import React from 'react'
 
@@ -22,16 +22,16 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Solito Example App</title>
+        <title>Secur</title>
         <meta
           name="description"
           content="Expo + Next.js with Solito. By Fernando Rojo."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Provider>
+      <AppProviders>
         <Component {...pageProps} />
-      </Provider>
+      </AppProviders>
     </>
   )
 }
