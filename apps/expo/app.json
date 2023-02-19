@@ -1,12 +1,23 @@
 {
   "expo": {
-    "name": "solito-nativewind",
-    "slug": "solito-nativewind",
+    "name": "secur",
+    "slug": "secur",
     "version": "1.0.0",
-    "scheme": "solito-nativewind",
-    "platforms": ["ios", "android"],
+    "scheme": "secur",
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "ios": {
-      "bundleIdentifier": "com.solito.nativewind"
+      "bundleIdentifier": "secur.com"
+    },
+    "android": {
+      "package": "secur.com"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "9284f974-9f80-40be-badf-b1c8829f7675"
+      }
     }
   }
 }

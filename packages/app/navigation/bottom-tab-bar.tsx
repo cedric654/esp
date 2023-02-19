@@ -3,14 +3,14 @@ import { useWindowDimensions } from 'react-native'
 import type { BottomTabBarProps } from '@react-navigation/bottom-tabs'
 import { MotiView } from 'moti'
 
-import { Haptics } from '@showtime-xyz/universal.haptics'
-import { useIsDarkMode } from '@showtime-xyz/universal.hooks'
-import { Pressable } from '@showtime-xyz/universal.pressable'
-import { useSafeAreaInsets } from '@showtime-xyz/universal.safe-area'
-import { colors } from '@showtime-xyz/universal.tailwind'
-import { View } from '@showtime-xyz/universal.view'
+import { Haptics } from 'app/design'
+import { useIsDarkMode } from 'app/hooks/use-is-dark-mode'
+import { Pressable } from 'app/design'
+import { useSafeAreaInsets } from 'app/design/safe-area'
+import { colors } from 'app/design/tailwind'
+import { View } from 'app/design'
 
-import { useRedirectToCreateDrop } from 'app/hooks/use-redirect-to-create-drop'
+// import { useRedirectToCreateDrop } from 'app/hooks/use-redirect-to-create-drop'
 import { useUser } from 'app/hooks/use-user'
 import { BlurView } from 'app/lib/blurview'
 import { BOTTOM_TABBAR_BASE_HEIGHT } from 'app/lib/constants'
@@ -29,7 +29,7 @@ export const BottomTabbar = ({
   const { bottom: safeAreaBottom } = useSafeAreaInsets()
   const isDark = useIsDarkMode()
   const color = isDark ? colors.gray[100] : colors.gray[900]
-  const redirectToCreateDrop = useRedirectToCreateDrop()
+  // const redirectToCreateDrop = useRedirectToCreateDrop()
   const nativeBottomTabBarHeightCallback = useBottomTabBarHeightCallback()
 
   const isHiddenBottomTabbar = !isAuthenticated || isTabBarHidden
@@ -60,7 +60,7 @@ export const BottomTabbar = ({
       >
         <View tw="flex-row bg-transparent pt-2">
           {state.routes.map((route, index) => {
-            const { options } = descriptors[route.key]
+            const { options } = descriptors[route.key] as any
             const focused = state.index === index
 
             const onPress = () => {
@@ -70,11 +70,6 @@ export const BottomTabbar = ({
                 canPreventDefault: true,
               })
               Haptics.impactAsync()
-
-              if (route.name === 'createTab') {
-                redirectToCreateDrop()
-                return
-              }
 
               if (!focused && !event.defaultPrevented) {
                 navigation.navigate({
