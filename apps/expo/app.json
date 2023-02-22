@@ -1,18 +1,15 @@
 {
   "expo": {
-    "name": "secur",
+    "name": "Secur",
     "slug": "secur",
     "version": "1.0.0",
     "scheme": "secur",
-    "platforms": [
-      "ios",
-      "android"
-    ],
+    "platforms": ["ios", "android"],
     "ios": {
-      "bundleIdentifier": "secur.com"
+      "bundleIdentifier": "com.secur.app"
     },
     "android": {
-      "package": "secur.com"
+      "package": "com.secur.app"
     },
     "extra": {
       "eas": {
