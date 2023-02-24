@@ -1,5 +1,5 @@
-import { A, H1, P, Text, TextLink } from 'app/design/typography'
-import { View } from 'app/design/view'
+import { A, H1, P, Text } from 'app/design/typography'
+import { View, TextLink } from 'app/design'
 import React from 'react'
 
 const Login = () => {
@@ -8,7 +8,7 @@ const Login = () => {
       <View className="w-full max-w-md space-y-8">
         <H1>Bonjour, </H1>
       </View>
-      <P>Se connecter ici</P>
+      <P>Test</P>
     </View>
   )
 }
