@@ -1,1 +1,1 @@
-export { default } from 'app/pages/cameras'
+export { default } from 'app/screens/cameras'

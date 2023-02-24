@@ -4,4 +4,4 @@ const CamerasScreen = () => {
   return <H1>Cameras screen</H1>
 }
 
-export { CamerasScreen }
+export default CamerasScreen
