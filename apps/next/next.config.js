@@ -1,10 +1,15 @@
 const { withExpo } = require('@expo/next-adapter')
 const withPlugins = require('next-compose-plugins')
 const withTM = require('next-transpile-modules')([
+  'react-native',
+  'react-native-web',
+  'app',
   'solito',
   'moti',
   'nativewind',
-  'app',
+  'expo',
+  'react-native-safe-area-context',
+  'react-native-mmkv',
 ])
 
 /** @type {import('next').NextConfig} */

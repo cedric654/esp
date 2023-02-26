@@ -1,7 +1,7 @@
 import { H1 } from 'app/design/typography'
 
-const CamerasScreen = () => {
+const CamerasPage = () => {
   return <H1>Cameras screen</H1>
 }
 
-export default CamerasScreen
+export default CamerasPage

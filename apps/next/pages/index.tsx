@@ -1,1 +1,1 @@
-export { default } from 'app/screens/home'
+export { default } from 'app/pages/home'

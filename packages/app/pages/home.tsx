@@ -1,14 +1,14 @@
 import { Login } from 'app/components/login'
-import { View } from 'app/design'
+import { TextLink, View } from 'app/design'
 import { H1 } from 'app/design/typography'
 
-const HomeScreen = () => {
+const HomePage = () => {
   return (
     <View>
       <H1>Home screen</H1>
-      <Login />
+      <TextLink href="/cameras">Regular Link</TextLink>
     </View>
   )
 }
 
-export default HomeScreen
+export default HomePage
