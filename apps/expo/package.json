@@ -1,4 +1,7 @@
 {
+  "name": "expo-app",
+  "version": "1.0.0",
+  "main": "index.js",
   "dependencies": {
     "@react-native-community/blur": "^4.3.0",
     "@react-navigation/bottom-tabs": "^6.5.4",
@@ -43,7 +46,5 @@
     "ios": "expo run:ios",
     "web": "expo start --web"
   },
-  "version": "1.0.0",
-  "private": true,
-  "name": "expo-app"
+  "private": true
 }

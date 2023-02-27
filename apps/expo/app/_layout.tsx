@@ -1,5 +1,10 @@
+import { SafeAreaProvider } from 'app/design/safe-area'
 import { Slot } from 'expo-router'
 
 export default function RootLayout() {
-  return <Slot />
+  return (
+    <SafeAreaProvider>
+      <Slot />
+    </SafeAreaProvider>
+  )
 }
