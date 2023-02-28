@@ -1,1 +1,9 @@
-export { default } from 'app/pages/cameras'
+import { View, Text } from "react-native";
+
+export default function Cameras() {
+  return (
+    <View>
+      <Text>Cameras screen</Text>
+    </View>
+  );
+}
