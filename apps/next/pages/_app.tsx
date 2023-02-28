@@ -11,7 +11,6 @@ const fixReanimatedIssue = () => {
 
 fixReanimatedIssue()
 
-import { AppProviders } from 'app/providers/app-providers'
 import Head from 'next/head'
 import React from 'react'
 
@@ -29,9 +28,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <AppProviders>
-        <Component {...pageProps} />
-      </AppProviders>
+      <Component {...pageProps} />
     </>
   )
 }
