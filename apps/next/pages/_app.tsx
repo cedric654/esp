@@ -16,6 +16,7 @@ import React from 'react'
 
 import '../global.css'
 import { AppProps } from 'next/app'
+import { AppProviders } from 'app/providers/app-providers.web'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -28,7 +29,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Component {...pageProps} />
+      <AppProviders>
+        <Component {...pageProps} />
+      </AppProviders>
     </>
   )
 }
