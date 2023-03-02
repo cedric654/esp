@@ -8171,7 +8171,7 @@ snapdragon@^0.8.1:
     source-map-resolve "^0.5.0"
     use "^3.1.0"
 
-solito@^2.0.0:
+solito@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/solito/-/solito-2.3.0.tgz#753f4155193a780b4c5bab59f7554aeaf745da38"
   integrity sha512-3dlarGMT1IePasSKJkpwE1B2CgsIZEXTBvuLLcvirRC4Xfzt8SIQ2FyTFsl5J6ShaYj7Is92wwPnxqA7K+6Qsg==
