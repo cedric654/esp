@@ -7,7 +7,6 @@ const HomePage = () => {
     <SafeAreaView>
       <H1>Écran accueil mobile</H1>
       <TextLink href="/profil">Se dirriger vers le profil</TextLink>
-      <Text className="my-10">Ceci est un test de style</Text>
     </SafeAreaView>
   )
 }

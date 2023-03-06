@@ -1,7 +1,8 @@
 import { Children, cloneElement, useMemo } from 'react'
 
 import { useIsDarkMode } from 'app/design/hooks'
-import { PressableHover, Text } from 'app/design'
+import { PressableHover } from 'app/design/pressable-hover'
+import { Text } from 'app/design'
 
 import {
   CONTAINER_HEIGHT_TW,

@@ -31,6 +31,8 @@ export function Button({ variant = 'primary', ...props }: ButtonProps) {
 export function PrimaryButton(props: ButtonProps) {
   const isDark = useIsDarkMode()
 
+  console.log(isDark)
+
   return (
     <BaseButton
       {...props}
