@@ -1,4 +1,4 @@
-import Sidebar from 'app/design/sidebar/index.web'
+import Sidebar from 'app/components/sidebar/index.web'
 import { Text, TextLink, View } from 'app/design'
 import { H1 } from 'app/design/typography'
 
