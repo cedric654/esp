@@ -20,6 +20,7 @@
     "next": "13.2.1",
     "next-fonts": "^1.5.1",
     "raf": "^3.4.1",
+    "react-virtuoso": "^4.1.0",
     "swr": "^2.0.3"
   },
   "devDependencies": {

@@ -4,9 +4,11 @@
   "main": "index.js",
   "dependencies": {
     "@react-native-community/blur": "^4.3.0",
+    "@shopify/flash-list": "^1.4.1",
     "@types/react": "^18.0.28",
     "@types/react-native": "~0.71.3",
     "app": "*",
+    "array-to-image": "^1.0.0",
     "blurhash": "^2.0.5",
     "eslint": "^8.21.0",
     "expo": "~48.0.4",
