@@ -1,11 +1,9 @@
-import { Button, Text, TextLink, View } from 'app/design'
-import { H1 } from 'app/design/typography'
+import { Button, Text, View } from 'app/design'
 
 const HomePage = () => {
   return (
     <View>
-      <H1>Écran accueil web</H1>
-      <TextLink href="/profil">Se dirriger vers le profil</TextLink>
+      <Text tw="text-2xl">Écran accueil web</Text>
     </View>
   )
 }
