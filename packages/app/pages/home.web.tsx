@@ -1,4 +1,4 @@
-import { TextLink, View } from 'app/design'
+import { Button, Text, TextLink, View } from 'app/design'
 import { H1 } from 'app/design/typography'
 
 const HomePage = () => {

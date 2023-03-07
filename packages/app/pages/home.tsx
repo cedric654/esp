@@ -1,4 +1,4 @@
-import { TextLink, View } from 'app/design'
+import { Text, TextLink, View } from 'app/design'
 import { SafeAreaView } from 'app/design/safe-area'
 import { H1 } from 'app/design/typography'
 

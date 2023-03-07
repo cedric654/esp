@@ -1,4 +1,5 @@
 const { withExpo } = require('@expo/next-adapter')
+const withFonts = require('next-fonts')
 const withPlugins = require('next-compose-plugins')
 const withTM = require('next-transpile-modules')([
   'react-native',
@@ -27,4 +28,4 @@ const nextConfig = {
   },
 }
 
-module.exports = withPlugins([withTM, withExpo], nextConfig)
+module.exports = withPlugins([withTM, withFonts, withExpo], nextConfig)
