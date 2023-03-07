@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "@capsizecss/core": "^3.1.0",
     "@react-native-community/blur": "^4.3.0",
     "@shopify/flash-list": "^1.4.1",
     "@types/react": "^18.0.28",

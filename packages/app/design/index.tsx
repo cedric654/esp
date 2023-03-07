@@ -1,7 +1,6 @@
 export { View } from './view'
 export { Pressable } from './pressable'
 export { Row } from './row'
-export { TextLink } from './text-link'
 export { Text } from './text'
 export { Image } from './image'
 export { Button } from './button'
