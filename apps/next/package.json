@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "@expo/next-adapter": "^5.0.2",
-    "@expo/vector-icons": "^13.0.0",
     "app": "*",
     "array-to-image": "^1.0.0",
     "blurhash": "^2.0.5",

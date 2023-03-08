@@ -1,6 +1,5 @@
 import { Tabs } from 'expo-router'
-import { FontAwesome } from '@expo/vector-icons'
-import { Ionicons } from '@expo/vector-icons'
+import { Home, Camera, Bell } from 'app/design/icon'
 import { colors } from 'app/lib/constants'
 
 export default function TabsLayout() {
@@ -16,27 +15,21 @@ export default function TabsLayout() {
         name="index"
         options={{
           title: 'Accueil',
-          tabBarIcon: ({ color }) => (
-            <FontAwesome name="home" size={24} color={color} />
-          ),
+          tabBarIcon: ({ color }) => <Home color={color} />,
         }}
       />
       <Tabs.Screen
         name="cameras"
         options={{
           title: 'Cameras',
-          tabBarIcon: ({ color }) => (
-            <FontAwesome name="camera" size={22} color={color} />
-          ),
+          tabBarIcon: ({ color }) => <Camera color={color} />,
         }}
       />
       <Tabs.Screen
         name="notifications"
         options={{
           title: 'Notifications',
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="notifications" size={24} color={color} />
-          ),
+          tabBarIcon: ({ color }) => <Bell color={color} />,
         }}
       />
     </Tabs>
