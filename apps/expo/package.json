@@ -5,7 +5,7 @@
   "dependencies": {
     "@capsizecss/core": "^3.1.0",
     "@react-native-community/blur": "^4.3.0",
-    "@shopify/flash-list": "^1.4.1",
+    "@shopify/flash-list": "1.4.0",
     "@types/react": "^18.0.28",
     "@types/react-native": "~0.71.3",
     "app": "*",
