@@ -15,21 +15,27 @@ export default function TabsLayout() {
         name="index"
         options={{
           title: 'Accueil',
-          tabBarIcon: ({ color }) => <Home color={color} />,
+          tabBarIcon: ({ color }) => (
+            <Home width={24} height={24} color={color} />
+          ),
         }}
       />
       <Tabs.Screen
         name="cameras"
         options={{
           title: 'Cameras',
-          tabBarIcon: ({ color }) => <Camera color={color} />,
+          tabBarIcon: ({ color }) => (
+            <Camera width={24} height={24} color={color} />
+          ),
         }}
       />
       <Tabs.Screen
         name="notifications"
         options={{
           title: 'Notifications',
-          tabBarIcon: ({ color }) => <Bell color={color} />,
+          tabBarIcon: ({ color }) => (
+            <Bell width={24} height={24} color={color} />
+          ),
         }}
       />
     </Tabs>
