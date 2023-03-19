@@ -17,6 +17,10 @@ const nextConfig = {
     'nativewind',
     'react-native-reanimated',
     'react-native-mmkv',
+    'zeego',
+    '@shopify/flash-list',
+    'react-native-svg',
+    'react-native-safe-area-context',
   ],
 }
 
