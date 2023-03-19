@@ -1,17 +1,4 @@
 const { withExpo } = require('@expo/next-adapter')
-const withFonts = require('next-fonts')
-const withPlugins = require('next-compose-plugins')
-const withTM = require('next-transpile-modules')([
-  'react-native',
-  'react-native-web',
-  'app',
-  'solito',
-  'moti',
-  'nativewind',
-  'expo',
-  'react-native-safe-area-context',
-  'react-native-mmkv',
-])
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -21,11 +8,16 @@ const nextConfig = {
   // https://github.com/nandorojo/moti/issues/224
   // once that gets fixed, set this back to true
   reactStrictMode: false,
-  webpack5: true,
-  experimental: {
-    forceSwcTransforms: true,
-    swcPlugins: [[require.resolve('./plugins/swc_plugin_reanimated.wasm')]],
-  },
+  transpilePackages: [
+    'react-native',
+    'react-native-web',
+    'app',
+    'solito',
+    'moti',
+    'nativewind',
+    'react-native-reanimated',
+    'react-native-mmkv',
+  ],
 }
 
-module.exports = withPlugins([withTM, withFonts, withExpo], nextConfig)
+module.exports = withExpo(nextConfig)
