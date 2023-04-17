@@ -5,11 +5,16 @@ import { SafeAreaView } from 'app/design/safe-area'
 
 export const HomePage = () => {
   return (
-    <SafeAreaView>
-      <View tw="my-4 mx-4">
+    <SafeAreaView tw="flex-1">
+      <View tw="py-4 px-4 flex-1">
         <WelcomeHeader />
-        <Text tw="text-xl font-bold">Caméras actives</Text>
-        <CameraCard />
+        <View tw="flex-1">
+          <Text tw="text-xl font-bold mb-2">Caméras actives</Text>
+          <View tw="flex-1 space-y-2">
+            <CameraCard isActive={true} uri="" />
+            <CameraCard isActive={false} uri="" />
+          </View>
+        </View>
       </View>
     </SafeAreaView>
   )

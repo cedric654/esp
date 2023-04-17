@@ -7,8 +7,13 @@ export const HomePage = () => {
   return (
     <BaseLayout>
       <WelcomeHeader />
-      <Text tw="text-xl font-bold">Caméras actives</Text>
-      <CameraCard />
+      <View tw="flex-1">
+        <Text tw="text-xl font-bold mb-2">Caméras actives</Text>
+        <View tw="flex-1 w-full xl:w-2/5 lg:w-full">
+          <CameraCard isActive={true} uri="" />
+          <CameraCard isActive={false} uri="" />
+        </View>
+      </View>
     </BaseLayout>
   )
 }

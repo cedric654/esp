@@ -14,7 +14,7 @@ export const Sidebar = () => {
     <View tw="px-8 py-4 ${}">
       <View tw="flex flex-row items-center justify-between pb-8 pl-2">
         <Text tw="flex items-center text-2xl font-bold">Secur</Text>
-        <Pressable tw="hover:bg-gray-100 p-1 rounded-md">
+        <Pressable href="" tw="hover:bg-gray-100 p-1 rounded-md">
           <Menu width={24} height={24} color="black" />
         </Pressable>
       </View>
@@ -25,14 +25,13 @@ export const Sidebar = () => {
               return (
                 <Pressable
                   key={menu.id}
+                  href={menu.link}
                   tw="pl-2 pr-24 py-2 hover:bg-gray-100 rounded-md"
                 >
-                  <Link href={menu.link}>
-                    <View tw="flex flex-row items-center">
-                      <Icon width={24} height={24} color="black" />
-                      <Text tw="ml-4">{menu.label}</Text>
-                    </View>
-                  </Link>
+                  <View tw="flex flex-row items-center">
+                    <Icon width={24} height={24} color="black" />
+                    <Text tw="ml-4">{menu.label}</Text>
+                  </View>
                 </Pressable>
               )
               // Ajouter les collapse
