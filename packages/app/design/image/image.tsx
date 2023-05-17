@@ -1,84 +1,65 @@
-import { ComponentProps } from 'react'
+import { useMemo } from 'react'
+import { Platform } from 'react-native'
 
-import { Blurhash } from 'react-native-blurhash'
-import FastImage from 'react-native-fast-image'
-import type { FastImageProps, Source } from 'react-native-fast-image'
+import { Image, ImageProps as ExpoImageProps, ImageSource } from 'expo-image'
 
 import { styled } from 'app/design/tailwind'
-import type { TW } from 'app/design/tailwind'
-import { View } from 'app/design'
 
-export type ImgProps = FastImageProps & {
+import { ResizeMode } from './types'
+
+export type ImgProps = ExpoImageProps & {
   height?: number
   width?: number
   borderRadius?: number
 }
 
-const StyledFastImage = styled(FastImage)
+const StyledExpoImage = styled(Image)
 
-function Img({
+type ImageProps = Omit<ImgProps, 'resizeMode'> & {
+  tw?: string
+  alt?: string
+  blurhash?: string
+  resizeMode?: ResizeMode
+  loading?: 'eager' | 'lazy'
+}
+
+function StyledImage({
+  borderRadius,
   source,
   height,
   width,
-  borderRadius,
   style,
+  contentFit,
+  resizeMode,
+  blurhash,
   ...rest
-}: ImgProps) {
+}: ImageProps) {
+  const imageSource = useMemo(
+    () =>
+      typeof source === 'object'
+        ? {
+            ...source,
+            headers: {
+              Accept: 'image/webp,*/*;q=0.8',
+            },
+          }
+        : source,
+    [source]
+  )
+  if (typeof source === 'object' && !(source as ImageSource)?.uri) {
+    return null
+  }
+
   return (
-    <StyledFastImage
-      source={
-        Object.prototype.hasOwnProperty.call(source, 'uri')
-          ? { ...(source as Source), cache: FastImage.cacheControl.immutable }
-          : source
-      }
-      style={[{ height, width, borderRadius }, style]}
+    <StyledExpoImage
+      style={[{ height, width, borderRadius }, style as any]}
+      contentFit={contentFit ?? resizeMode}
+      placeholder={{ blurhash, width, height }}
+      source={imageSource}
+      cachePolicy={'disk'}
       {...rest}
     />
   )
 }
 
-type ImageProps = {
-  tw?: TW
-  alt: string
-  blurhash?: string
-} & ComponentProps<typeof Img>
-
-function StyledImage({
-  width,
-  height,
-  borderRadius,
-  blurhash,
-  ...props
-}: ImageProps) {
-  if (blurhash) {
-    return (
-      <>
-        <View tw="absolute">
-          <Blurhash
-            {...props}
-            blurhash={blurhash}
-            decodeWidth={16}
-            decodeHeight={16}
-            decodeAsync={true}
-          />
-        </View>
-        <Img
-          width={width}
-          height={height}
-          borderRadius={borderRadius}
-          {...props}
-        />
-      </>
-    )
-  }
-
-  return (
-    <Img width={width} height={height} borderRadius={borderRadius} {...props} />
-  )
-}
-
-const preload = (sources: string[]) => {
-  FastImage.preload(sources.map((source) => ({ uri: source })))
-}
-
-export { StyledImage as Image, preload }
+export { StyledImage as Image }

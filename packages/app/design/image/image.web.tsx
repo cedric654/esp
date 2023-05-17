@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
 import { ComponentProps, CSSProperties, useCallback } from 'react'
 import { ImageURISource } from 'react-native'
 
@@ -19,11 +18,11 @@ const getBase64Blurhash = (blurhash: string): string => {
   return src
 }
 
-type Props = Pick<ImageNativeProps, 'source' | 'onLoad'> &
+type Props = Pick<ImageNativeProps, 'source' | 'onLoad' | 'recyclingKey'> &
   Omit<NextImageProps, 'src'> & {
     className: string
     source: ImageURISource
-    loading: 'lazy' | 'eager'
+    loading?: 'lazy' | 'eager'
     width: number
     height: number
     borderRadius?: number
@@ -44,7 +43,9 @@ function Img({
   contentFit,
   onLoad,
   style,
+  alt,
   onLoadingComplete: onLoadingCompleteProps,
+  recyclingKey,
   ...props
 }: Props) {
   const actualHeight =
@@ -56,20 +57,13 @@ function Img({
 
   const onLoadingComplete = useCallback(
     (e: HTMLImageElement) => {
-      // this is for using expo-image
-      // onLoad?.({
-      //   cacheType: "none",
-      //   source: {
-      //     url: e.currentSrc,
-      //     width: e.naturalWidth,
-      //     height: e.naturalHeight,
-      //     mediaType: null,
-      //   },
-      // });
       onLoad?.({
-        nativeEvent: {
+        cacheType: 'none',
+        source: {
+          url: e.currentSrc,
           width: e.naturalWidth,
           height: e.naturalHeight,
+          mediaType: null,
         },
       })
       onLoadingCompleteProps?.(e)
@@ -85,6 +79,7 @@ function Img({
           ...style,
         }}
         loading={loading}
+        priority={loading === 'eager'}
         width={width}
         height={height}
         onLoadingComplete={onLoadingComplete}
@@ -94,6 +89,7 @@ function Img({
             ? getBase64Blurhash(props.blurhash)
             : undefined
         }
+        alt={alt ?? ''}
         fill={!hasHeightOrWidth}
         unoptimized // We already optimize the images with our CDN
         {...props}
@@ -106,9 +102,11 @@ function Img({
       <Image
         src={source}
         loading={loading}
+        priority={loading === 'eager'}
         width={width}
         height={height}
         fill={!hasHeightOrWidth}
+        alt={alt ?? ''}
         {...props}
       />
     )
@@ -123,6 +121,8 @@ function StyledImage({ borderRadius = 0, tw = '', ...props }: ImageProps) {
   return (
     <View
       style={{
+        width: 'inherit',
+        height: 'inherit',
         borderRadius,
         overflow: 'hidden',
       }}

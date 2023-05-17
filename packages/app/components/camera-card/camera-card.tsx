@@ -4,11 +4,12 @@ import { colors } from 'app/lib/constants'
 import { useEffect, useState } from 'react'
 
 type CameraCardProps = {
+  name: string
   isActive: boolean
   uri: string
 }
 
-export const CameraCard = ({ isActive, uri }: CameraCardProps) => {
+export const CameraCard = ({ name, isActive, uri }: CameraCardProps) => {
   const [currentDateTime, setCurrentDateTime] = useState('')
 
   useEffect(() => {
@@ -31,15 +32,13 @@ export const CameraCard = ({ isActive, uri }: CameraCardProps) => {
     <Pressable href="/cameras/test" tw="flex-1 mb-4">
       <ImageBackground
         alt={'Camera image'}
-        source={{
-          uri: 'https://cache.marieclaire.fr/data/photo/w1200_h630_ci/1jv/idees-deco-salon2.jpg',
-        }}
+        source={{ uri }}
         tw="rounded-lg flex-1 p-3 bg-black overflow-hidden"
         resizeMode="stretch"
       >
         <View tw="flex-1 justify-between">
           <View tw="flex-row items-center justify-between">
-            <Text tw="font-bold text-white md:text-lg">Salon</Text>
+            <Text tw="font-bold text-white md:text-lg">{name}</Text>
             <View tw="flex flex-row items-center gap-x-2">
               <Circle
                 width={16}
