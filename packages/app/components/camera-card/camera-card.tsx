@@ -1,5 +1,5 @@
 import { ImageBackground, Pressable, Text, View } from 'app/design'
-import { Circle } from 'app/design/icon'
+import { CameraOff, Circle } from 'app/design/icon'
 import { colors } from 'app/lib/constants'
 import { useEffect, useState } from 'react'
 
@@ -74,8 +74,15 @@ export const CameraCard = ({
               </Text>
             </View>
           </View>
+          {!isActive ? (
+            <View tw="flex-row justify-center">
+              <CameraOff width={32} height={28} color="white" />
+            </View>
+          ) : null}
           <Text tw="self-end text-white">
-            {isActive ? currentDateTime : formatDate()}
+            {isActive
+              ? currentDateTime
+              : `Dernière heure d'enregistrement : ${formatDate()}`}
           </Text>
         </View>
       </ImageBackground>

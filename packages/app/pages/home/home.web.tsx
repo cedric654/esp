@@ -12,7 +12,7 @@ export const HomePage = () => {
       <WelcomeHeader />
       <View tw="flex-1">
         <Text tw="text-xl font-bold mb-2">Caméras actives</Text>
-        <View tw="max-xl:flex-1 w-full xl:w-1/2 xl:h-1/2 lg:w-full">
+        <View tw="w-full h-1/2 lg:w-1/2 xl:h-3/5">
           {activeCameras.map((camera) => (
             <CameraCard
               key={camera.id}
