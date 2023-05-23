@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "location": "Salon",
+    "uri": "camera1.jpg",
+    "isActive": true,
+    "dateInstalled": "2023-01-10",
+    "lastRecordingTime": "2023-05-21T15:30:00",
+    "weaponsDetection": false
+  },
+  {
+    "id": 2,
+    "location": "Garage",
+    "uri": "camera2.jpg",
+    "isActive": false,
+    "dateInstalled": "2022-11-02",
+    "lastRecordingTime": "2023-05-20T08:45:00",
+    "weaponsDetection": true
+  },
+  {
+    "id": 3,
+    "location": "Terrasse",
+    "uri": "camera3.jpg",
+    "isActive": false,
+    "dateInstalled": "2023-03-18",
+    "lastRecordingTime": "2023-05-21T21:15:00",
+    "weaponsDetection": true
+  },
+  {
+    "id": 4,
+    "location": "Cuisine",
+    "uri": "camera4.jpg",
+    "isActive": false,
+    "dateInstalled": "2023-02-05",
+    "lastRecordingTime": "2023-05-21T12:10:00",
+    "weaponsDetection": false
+  },
+  {
+    "id": 5,
+    "location": "Chambre",
+    "uri": "camera5.jpg",
+    "isActive": false,
+    "dateInstalled": "2023-04-20",
+    "lastRecordingTime": "2023-05-20T18:20:00",
+    "weaponsDetection": true
+  }
+]

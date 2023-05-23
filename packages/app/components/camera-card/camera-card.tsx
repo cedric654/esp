@@ -4,41 +4,65 @@ import { colors } from 'app/lib/constants'
 import { useEffect, useState } from 'react'
 
 type CameraCardProps = {
-  name: string
+  id: number
+  location: string
   isActive: boolean
+  lastRecordingTime: string
   uri: string
+  clickable: boolean
 }
 
-export const CameraCard = ({ name, isActive, uri }: CameraCardProps) => {
+export const CameraCard = ({
+  id,
+  location,
+  isActive,
+  lastRecordingTime,
+  uri,
+  clickable,
+}: CameraCardProps) => {
   const [currentDateTime, setCurrentDateTime] = useState('')
+
+  const formatDate = () => {
+    const currentDate = new Date()
+
+    const options: Intl.DateTimeFormatOptions = {
+      day: 'numeric',
+      month: 'long',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+    }
+
+    let formattedDate
+
+    if (isActive) formattedDate = currentDate.toLocaleString('fr-FR', options)
+    else
+      formattedDate = new Date(lastRecordingTime).toLocaleString(
+        'fr-FR',
+        options
+      )
+
+    return formattedDate
+  }
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      const currentDate = new Date()
-      const options: Intl.DateTimeFormatOptions = {
-        day: 'numeric',
-        month: 'long',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-      }
-      const formatted = currentDate.toLocaleString('fr-FR', options)
-      setCurrentDateTime(formatted)
+      setCurrentDateTime(formatDate())
     }, 1000)
     return () => clearInterval(intervalId)
   }, [])
 
   return (
-    <Pressable href="/cameras/test" tw="flex-1 mb-4">
+    <Pressable href={clickable ? `/cameras/${location}` : '#'} tw="flex-1 mb-4">
       <ImageBackground
-        alt={'Camera image'}
+        alt={isActive ? 'Active Camera' : 'Inactive Camera'}
         source={{ uri }}
         tw="rounded-lg flex-1 p-3 bg-black overflow-hidden"
         resizeMode="stretch"
       >
         <View tw="flex-1 justify-between">
           <View tw="flex-row items-center justify-between">
-            <Text tw="font-bold text-white md:text-lg">{name}</Text>
+            <Text tw="font-bold text-white md:text-lg">{location}</Text>
             <View tw="flex flex-row items-center gap-x-2">
               <Circle
                 width={16}
@@ -50,7 +74,9 @@ export const CameraCard = ({ name, isActive, uri }: CameraCardProps) => {
               </Text>
             </View>
           </View>
-          <Text tw="self-end text-white">{currentDateTime}</Text>
+          <Text tw="self-end text-white">
+            {isActive ? currentDateTime : formatDate()}
+          </Text>
         </View>
       </ImageBackground>
     </Pressable>
