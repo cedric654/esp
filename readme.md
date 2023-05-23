@@ -1,7 +1,19 @@
-# Bonjour [FR]
+# Bonjour
 
 Ce dépot est mon projet final de ma technique d'informatique [420.B0] (Épreuve synthèse de programme)
 
-# Welcome [EN]
+Vous pouvez retrouver une application mobile et web
 
-This is my final project for my computer science technique [420.B0] (Program summary test)
+Afin de lancer les applications il suffit de :
+
+Web
+
+```shell
+yarn web
+```
+
+Mobile (native)
+
+```shell
+yarn native
+```
