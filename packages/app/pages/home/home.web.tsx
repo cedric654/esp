@@ -20,7 +20,7 @@ export const HomePage = () => {
               location={camera.location}
               isActive={camera.isActive}
               lastRecordingTime={camera.lastRecordingTime}
-              uri={camera.uri}
+              imageUri={camera.uri}
               clickable={true}
             />
           ))}

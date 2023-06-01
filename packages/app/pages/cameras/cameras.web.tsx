@@ -13,13 +13,13 @@ export const CamerasPage = () => {
           <CameraPlus width={24} height={24} color="black" />
         </View>
         {cameraData.map((camera) => (
-          <View key={camera.id} tw="h-3/4 lg:h-5/6 xl:w-1/2">
+          <View key={camera.id} tw="h-3/4 lg:h-3/5 xl:w-1/2">
             <CameraCard
               id={camera.id}
               location={camera.location}
               isActive={camera.isActive}
               lastRecordingTime={camera.lastRecordingTime}
-              uri={camera.uri}
+              imageUri={camera.uri}
               clickable={true}
             />
           </View>

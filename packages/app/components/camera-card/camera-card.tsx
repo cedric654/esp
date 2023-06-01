@@ -8,7 +8,7 @@ type CameraCardProps = {
   location: string
   isActive: boolean
   lastRecordingTime: string
-  uri: string
+  imageUri: string
   clickable: boolean
 }
 
@@ -17,7 +17,7 @@ export const CameraCard = ({
   location,
   isActive,
   lastRecordingTime,
-  uri,
+  imageUri,
   clickable,
 }: CameraCardProps) => {
   const [currentDateTime, setCurrentDateTime] = useState('')
@@ -56,7 +56,7 @@ export const CameraCard = ({
     <Pressable href={clickable ? `/cameras/${location}` : '#'} tw="flex-1 mb-4">
       <ImageBackground
         alt={isActive ? 'Active Camera' : 'Inactive Camera'}
-        source={{ uri }}
+        source={{ uri: imageUri }}
         tw="rounded-lg flex-1 p-3 bg-black overflow-hidden"
         resizeMode="stretch"
       >

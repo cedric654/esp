@@ -2,7 +2,7 @@
   {
     "id": 1,
     "location": "Salon",
-    "uri": "camera1.jpg",
+    "uri": "http://10.0.0.132:2204/video_feed",
     "isActive": true,
     "dateInstalled": "2023-01-10",
     "lastRecordingTime": "2023-05-21T15:30:00",

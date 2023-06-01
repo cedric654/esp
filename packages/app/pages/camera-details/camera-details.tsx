@@ -13,7 +13,7 @@ export const CameraDetails = () => {
 
   return (
     <SafeAreaView tw="flex-1">
-      <View tw="py-4 px-4 h-1/2 md:h-3/4 lg:px-32 lg:flex-1">
+      <View tw="py-4 px-4 h-1/2 md:h-3/4 lg:px-36 lg:flex-1">
         <View tw="py-4 mb-2 flex-row items-center justify-between">
           <Pressable
             href="/cameras"
@@ -35,7 +35,7 @@ export const CameraDetails = () => {
             location={camera.location}
             isActive={camera.isActive}
             lastRecordingTime={camera.lastRecordingTime}
-            uri={camera.uri}
+            imageUri={camera.uri}
             clickable={false}
           />
         ) : null}
